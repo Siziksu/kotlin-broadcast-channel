@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.siziksu.broadcast_channel"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    def mainApplication = rootProject.ext.mainApplication
+
+    implementation mainApplication.appCompat
+    implementation mainApplication.constraint
+    implementation mainApplication.design
+    implementation mainApplication.cardView
+    implementation mainApplication.recyclerView
+    implementation mainApplication.navigationFragment
+    implementation mainApplication.navigationUi
+    implementation mainApplication.legacySupport
+
+    implementation mainApplication.kotlinStdLib
+    implementation mainApplication.kotlinCoroutinesAndroid
+
+    implementation mainApplication.koin
+    implementation mainApplication.koinScope
+}

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Broadcast Channel</string>
+    <string name="primary_fragment">Primary Fragment</string>
+    <string name="secondary_fragment">Secondary Fragment</string>
+    <string name="value">Value: %d</string>
+</resources>
